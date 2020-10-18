@@ -3,7 +3,7 @@
 
 #ifndef MIDI_MAPPER_H
 #include "midi_mapper.h"
-#include "../../music/hex/Super_Mario_Bros._Theme_midi.h"
+//#include "../../music/hex/Super_Mario_Bros._Theme_midi.h"
 #endif
 
 //#include "Super_Mario_Bros._Theme_midi.h"
@@ -140,6 +140,7 @@ void midiFileParse(void) {
     //
 }
 
+
 /*
  */
 void extractElements(char const *srcArray, char *subArray, uint8_t n)
@@ -169,6 +170,7 @@ void WriteVarLen(uint32_t value) {
 //            break;
 //    }
 }
+
 
 uint32_t doublewordReadVarLen(void) {
     uint32_t value;
@@ -217,11 +219,13 @@ int c1, c2, c3, c4;
 	return (value);
 }
 
+
 static int to16bit(c1,c2)
 int c1, c2;
 {
 	return ((c1 & 0xff ) << 8) + (c2 & 0xff);
 }
+
 
 static long read32bit()
 {
@@ -234,6 +238,7 @@ static long read32bit()
 	return to32bit(c1,c2,c3,c4);
 }
 
+
 static int read16bit()
 {
 	int c1, c2;
@@ -241,6 +246,7 @@ static int read16bit()
 	//c2 = egetc();
 	return to16bit(c1,c2);
 }
+
 
 static int egetc()			/* read a single character and abort on EOF */
 {
