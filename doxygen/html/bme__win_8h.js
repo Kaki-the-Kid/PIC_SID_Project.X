@@ -1,0 +1,26 @@
+var bme__win_8h =
+[
+    [ "win_checkmessages", "bme__win_8h.html#a974ab141397c60ea32dd3ad7ad56531d", null ],
+    [ "win_closewindow", "bme__win_8h.html#a3a42932514790e8338c082a0b6fe3ca9", null ],
+    [ "win_getspeed", "bme__win_8h.html#ae198fff410e4021a082d49d56bf82e80", null ],
+    [ "win_messagebox", "bme__win_8h.html#ace91c0ea5ff218d3d891538d66c16b89", null ],
+    [ "win_openwindow", "bme__win_8h.html#abb16278ffb8ee53b07319a55e6924626", null ],
+    [ "win_setmousemode", "bme__win_8h.html#aec9388a351fed8ffafbbb30d18db2726", null ],
+    [ "joy", "bme__win_8h.html#ab7de0dd64e70e61e892f06b4fc0822c2", null ],
+    [ "joybuttons", "bme__win_8h.html#a2a47ed8043ca34488a45bfda6938e730", null ],
+    [ "joyx", "bme__win_8h.html#a7c2162cf7bf0842da07b4ad1ed250729", null ],
+    [ "joyy", "bme__win_8h.html#af06f39477f0a7f4fffa0ab8969faae3f", null ],
+    [ "win_asciikey", "bme__win_8h.html#ad4aaff4098dca6ecfa626d1e3d786dfd", null ],
+    [ "win_fullscreen", "bme__win_8h.html#aed98c687230cb98df7d164bac4d5f888", null ],
+    [ "win_keystate", "bme__win_8h.html#af1ee4ad0ae948164e5d06099eb99908b", null ],
+    [ "win_keytable", "bme__win_8h.html#a49dbc13c4778b1b8c9d85f5dd74782fa", null ],
+    [ "win_mousebuttons", "bme__win_8h.html#a79dfc8518178d802662ef598c3798347", null ],
+    [ "win_mousemode", "bme__win_8h.html#ada57bc756a9185ee47b088558a0fb37b", null ],
+    [ "win_mousexpos", "bme__win_8h.html#a5da847b805e03f0e3d788a35f51e119c", null ],
+    [ "win_mousexrel", "bme__win_8h.html#a7f928b3d8381ba112be951822a5fa1fa", null ],
+    [ "win_mouseypos", "bme__win_8h.html#a5ca5dfb630db1052280c60b50132d3d7", null ],
+    [ "win_mouseyrel", "bme__win_8h.html#a424d9ca4ebfab3ed121561f3326f256f", null ],
+    [ "win_quitted", "bme__win_8h.html#a1c4749780a6ed4afb7ba3734ef33075f", null ],
+    [ "win_virtualkey", "bme__win_8h.html#a38a7a2ad5fa7e08d5641a55b04638c1d", null ],
+    [ "win_windowinitted", "bme__win_8h.html#abd152182a92c63d020afc35c1aad019f", null ]
+];

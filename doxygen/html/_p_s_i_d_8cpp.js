@@ -1,0 +1,28 @@
+var _p_s_i_d_8cpp =
+[
+    [ "psidHeader", "structlibsidplayfp_1_1psid_header.html", "structlibsidplayfp_1_1psid_header" ],
+    [ "PSID_MUS", "_p_s_i_d_8cpp.html#aecd12a18eeb0ee701fc7b0efd5068266ac5458fe84d720b06b611ef4df757a8da", null ],
+    [ "PSID_SPECIFIC", "_p_s_i_d_8cpp.html#aecd12a18eeb0ee701fc7b0efd5068266ade428be5a0402efdfa960b4d340183cf", null ],
+    [ "PSID_BASIC", "_p_s_i_d_8cpp.html#aecd12a18eeb0ee701fc7b0efd5068266ac0a49031feb07e4c586ea54a79bd42fd", null ],
+    [ "PSID_CLOCK", "_p_s_i_d_8cpp.html#aecd12a18eeb0ee701fc7b0efd5068266a7abda5b6844d6616d2e0613beadb1c36", null ],
+    [ "PSID_SIDMODEL", "_p_s_i_d_8cpp.html#aecd12a18eeb0ee701fc7b0efd5068266aa886209a725bd9b97adef755f3a151ea", null ],
+    [ "PSID_CLOCK_UNKNOWN", "_p_s_i_d_8cpp.html#a8420dba71b9cc240cf981b0bef892004a353985ab8a55f3cba254c814369647b5", null ],
+    [ "PSID_CLOCK_PAL", "_p_s_i_d_8cpp.html#a8420dba71b9cc240cf981b0bef892004aca3d4aec4ead66a55d49d188ba059414", null ],
+    [ "PSID_CLOCK_NTSC", "_p_s_i_d_8cpp.html#a8420dba71b9cc240cf981b0bef892004ac45c703bfa3b89089a83826ea8b05168", null ],
+    [ "PSID_CLOCK_ANY", "_p_s_i_d_8cpp.html#a8420dba71b9cc240cf981b0bef892004a14748c9045b7f9ff043432d60d5c1962", null ],
+    [ "PSID_SIDMODEL_UNKNOWN", "_p_s_i_d_8cpp.html#afb24d298ddd4bc4ff61aa333f07a574aa2d746e0fd6cf906a2dfdaae177559c7e", null ],
+    [ "PSID_SIDMODEL_6581", "_p_s_i_d_8cpp.html#afb24d298ddd4bc4ff61aa333f07a574aa02deb0536a7a5e26089a54bd6d1a3ed0", null ],
+    [ "PSID_SIDMODEL_8580", "_p_s_i_d_8cpp.html#afb24d298ddd4bc4ff61aa333f07a574aa28704cc9d54994c68554a52ce41bb80a", null ],
+    [ "PSID_SIDMODEL_ANY", "_p_s_i_d_8cpp.html#afb24d298ddd4bc4ff61aa333f07a574aaf7e385d5b0cd46aab7a8495d17ebacf0", null ],
+    [ "getSidModel", "_p_s_i_d_8cpp.html#a65f59ef9d56e83b27ab2cf84817fc55d", null ],
+    [ "validateAddress", "_p_s_i_d_8cpp.html#af5723f9ede95ce173b7e838e210fb791", null ],
+    [ "psid_headerSize", "_p_s_i_d_8cpp.html#abb6913b06ce050c8cee035c507819b41", null ],
+    [ "PSID_ID", "_p_s_i_d_8cpp.html#a168d8e42b22c29acf85a8264cd81eefb", null ],
+    [ "PSID_MAXSTRLEN", "_p_s_i_d_8cpp.html#aaf68e3705118dff6165ea9e60a220f94", null ],
+    [ "psidv2_headerSize", "_p_s_i_d_8cpp.html#a4f69d4e889059fa6f6eb413908ea8c21", null ],
+    [ "RSID_ID", "_p_s_i_d_8cpp.html#a89bd32ca6fd6f29a1efe04891fc6e009", null ],
+    [ "TXT_FORMAT_PSID", "_p_s_i_d_8cpp.html#a5921f93248af09cdba185df818ee9ce1", null ],
+    [ "TXT_FORMAT_RSID", "_p_s_i_d_8cpp.html#a1839b71385c38f45c0adb552683eb9d6", null ],
+    [ "TXT_UNKNOWN_PSID", "_p_s_i_d_8cpp.html#ab078008ceaf062d2f448b0211b54ee81", null ],
+    [ "TXT_UNKNOWN_RSID", "_p_s_i_d_8cpp.html#af970a28b8a6bc62ac57971910c490c25", null ]
+];

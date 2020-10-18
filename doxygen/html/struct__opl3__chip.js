@@ -1,0 +1,26 @@
+var struct__opl3__chip =
+[
+    [ "channel", "struct__opl3__chip.html#a615c831ca27d0143d1532488930887ab", null ],
+    [ "mixbuff", "struct__opl3__chip.html#a5dcb87644dcd05e7c270870e054427da", null ],
+    [ "newm", "struct__opl3__chip.html#af8cd166dc4ae990690297b116f997ca4", null ],
+    [ "noise", "struct__opl3__chip.html#a0e732dbe4a4c8d16b0ed16c623bcc3e6", null ],
+    [ "nts", "struct__opl3__chip.html#a0f9d26e2c7265828bebbe0084f30aba0", null ],
+    [ "oldsamples", "struct__opl3__chip.html#acd75a57517d974e4f109ed882c633276", null ],
+    [ "rateratio", "struct__opl3__chip.html#aff56fa1afacb0c9ccc13a56892aca7f6", null ],
+    [ "rhy", "struct__opl3__chip.html#adf0048dce5541a0dadcd8c276a52e23a", null ],
+    [ "samplecnt", "struct__opl3__chip.html#ae5a58546bb47e363ab2772935dbe353d", null ],
+    [ "samples", "struct__opl3__chip.html#a11252cd8ebf98533eaca7574c37a19bf", null ],
+    [ "slot", "struct__opl3__chip.html#afa6bab3582a3a451406b00dcd8ce0006", null ],
+    [ "timer", "struct__opl3__chip.html#a40215bb83df649613b218b6cea9188bc", null ],
+    [ "tremolo", "struct__opl3__chip.html#a48f4d568c36fefe00b1cba85ebc066ef", null ],
+    [ "tremolopos", "struct__opl3__chip.html#adff83e6f4654b0a4486a5c8bc718c621", null ],
+    [ "tremoloshift", "struct__opl3__chip.html#aec914abf83914fb408fd5232e1bd2497", null ],
+    [ "vibpos", "struct__opl3__chip.html#a3fbba79b7a20ddb0a81c134ecd7e2e90", null ],
+    [ "vibshift", "struct__opl3__chip.html#a6e6fb4939c2a56333f5f2d2fb4c14856", null ],
+    [ "writebuf", "struct__opl3__chip.html#aeb0b2be5048a268513faf45acf8eb4ca", null ],
+    [ "writebuf_cur", "struct__opl3__chip.html#ae9ca9035b677ff9617aabb2cabb4c4a7", null ],
+    [ "writebuf_last", "struct__opl3__chip.html#aada8feefe961952208595946a93d3360", null ],
+    [ "writebuf_lasttime", "struct__opl3__chip.html#ad36250bf292e0f7d93a7f3e8bdab70e4", null ],
+    [ "writebuf_samplecnt", "struct__opl3__chip.html#ad916fcf1e6c803568cc763f6252ca22d", null ],
+    [ "zeromod", "struct__opl3__chip.html#ad23adad20bc5df4bf80fa45325da8f11", null ]
+];

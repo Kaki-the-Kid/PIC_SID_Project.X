@@ -1,0 +1,28 @@
+var atari5200_8h =
+[
+    [ "_bordercolor", "atari5200_8h.html#a297167d002cbeaef7d639664f10f49cb", null ],
+    [ "ANTIC", "atari5200_8h.html#a3fad2508ffa0b1b5eb86bf6539e2ddd9", null ],
+    [ "AT_NTSC", "atari5200_8h.html#af04ded518a5b7eb790d208903725a445", null ],
+    [ "AT_PAL", "atari5200_8h.html#a50d177cea7c2fb7c3b9e93f58fa35696", null ],
+    [ "CH_HLINE", "atari5200_8h.html#a9b64d1f64dfba36a69f53dea76fdda00", null ],
+    [ "CH_LLCORNER", "atari5200_8h.html#a7f48d495b76fce4c6ce0eded9190fbdc", null ],
+    [ "CH_LRCORNER", "atari5200_8h.html#a14f6827cf5f7995f6bee7e72a3962b5a", null ],
+    [ "CH_ULCORNER", "atari5200_8h.html#acc2fca968ffcbbec5a564ae39e57daf6", null ],
+    [ "CH_URCORNER", "atari5200_8h.html#a134d86ab1bb0418c9d0bde800f1c99b6", null ],
+    [ "CH_VLINE", "atari5200_8h.html#a6f6407cd7a29b1d617880046009e38c5", null ],
+    [ "COLOR_BLACK", "atari5200_8h.html#aba2a7fe77a7501e5844370eec0185207", null ],
+    [ "COLOR_GREEN", "atari5200_8h.html#afc9149f5de51bd9ac4f5ebbfa153f018", null ],
+    [ "COLOR_RED", "atari5200_8h.html#ad86358bf19927183dd7b4ae215a29731", null ],
+    [ "COLOR_WHITE", "atari5200_8h.html#a9b44987ffdc2af19b635206b94334b69", null ],
+    [ "DYN_DRV", "atari5200_8h.html#a8f81997a67d60ba92b94cbfb95cc9a0e", null ],
+    [ "GTIA_READ", "atari5200_8h.html#aa7bc47e1ff61b8bbee131795440d0974", null ],
+    [ "GTIA_WRITE", "atari5200_8h.html#ae1c3172d667b4ee6b9a6b88c46e058eb", null ],
+    [ "JOY_BTN_1_MASK", "atari5200_8h.html#a250ed0dbb7e306e97a2878c0aa075652", null ],
+    [ "JOY_DOWN_MASK", "atari5200_8h.html#a67a2a0cc1c9721809aaf6cdf21b16c1a", null ],
+    [ "JOY_LEFT_MASK", "atari5200_8h.html#a1322d19f2111ee0082bb92e21242985b", null ],
+    [ "JOY_RIGHT_MASK", "atari5200_8h.html#a7cdef401bc87a915d6ccc36012ea0749", null ],
+    [ "JOY_UP_MASK", "atari5200_8h.html#a14b65bde283ccc527dfeb5466cf6a9b6", null ],
+    [ "POKEY_READ", "atari5200_8h.html#a77de8ce010ce4ef3ba1bf2e35dfa971c", null ],
+    [ "POKEY_WRITE", "atari5200_8h.html#a9cf410b868835055fba98db0caf00d08", null ],
+    [ "atr5200std_joy", "atari5200_8h.html#a1005b7a2de3d6402d53970e89de6fbe0", null ]
+];

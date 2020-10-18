@@ -1,0 +1,25 @@
+var struct_vst_audio_file =
+[
+    [ "editCursorPosition", "struct_vst_audio_file.html#a43c41ac65fd950af21355b2b688ed17d", null ],
+    [ "flags", "struct_vst_audio_file.html#a2f79e4139d7c230260930382b6e3bd9f", null ],
+    [ "format", "struct_vst_audio_file.html#a242ad5768d45ce363d4d9b2bb9b8aeae", null ],
+    [ "future", "struct_vst_audio_file.html#a18eb2c7bfab1fe0b868df607661d1176", null ],
+    [ "hostOwned", "struct_vst_audio_file.html#aa55f84c7757ca43d4e7ccec928d95c36", null ],
+    [ "name", "struct_vst_audio_file.html#ad0cc63d504ad494993054200325b4545", null ],
+    [ "numChannels", "struct_vst_audio_file.html#af16c37b7403ce6b4cb9f42f7603ab83d", null ],
+    [ "numFrames", "struct_vst_audio_file.html#a0d54c11bd39997174ae446967cb07618", null ],
+    [ "numMarkers", "struct_vst_audio_file.html#a1ccb471cb7d9dfbd3601a1d401f807dc", null ],
+    [ "plugOwned", "struct_vst_audio_file.html#ab51dec30d3d6eb76d41bf4057d68fc66", null ],
+    [ "sampleRate", "struct_vst_audio_file.html#a2bd79d2ab2dfb6aeaf75c2878ad30e1f", null ],
+    [ "selectedChannelsMask", "struct_vst_audio_file.html#ab994f4182e2ea055b330a9d34b9dd664", null ],
+    [ "selectionSize", "struct_vst_audio_file.html#aa48ee094d16de2aeccde8f0f1b2c7f3f", null ],
+    [ "selectionStart", "struct_vst_audio_file.html#ac0dc960b4a58ab52d37f7864bcf02df5", null ],
+    [ "smpteFrameRate", "struct_vst_audio_file.html#aef0fbaa432a6655e57ebab7a7ce2f3a4", null ],
+    [ "tempo", "struct_vst_audio_file.html#aff2f6d52166217d13f9b2072c9e67c13", null ],
+    [ "ticksPerBlackNote", "struct_vst_audio_file.html#afae3996c0cd22fb63b4f072fd95ab497", null ],
+    [ "timeRulerOffset", "struct_vst_audio_file.html#a710e46b59b9600d6517dd8d761c33429", null ],
+    [ "timeRulerUnit", "struct_vst_audio_file.html#a863e7d090a023d3772fb85859b961133", null ],
+    [ "timeSigDenominator", "struct_vst_audio_file.html#a717b0357740edc5cc4a694c25649b94f", null ],
+    [ "timeSigNumerator", "struct_vst_audio_file.html#a7660ccc128aa93cc0d4f761523a97c17", null ],
+    [ "uniqueId", "struct_vst_audio_file.html#a5be3d894b2558f88167cd5bad651ce96", null ]
+];

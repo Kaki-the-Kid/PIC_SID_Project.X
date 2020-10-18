@@ -1,0 +1,725 @@
+;//******************************************************************
+;// Assembly SID emulator
+;//******************************************************************
+    
+//#include <xc.inc>
+
+
+;// When assembly code is placed in a psect, it can be manipulated as a
+;// whole by the linker and placed in memory.  
+;
+;// In this example, barfunc is the program section (psect) name, 'local' means
+;// that the section will not be combined with other sections even if they have
+;// the same name.  class=CODE means the barfunc must go in the CODE container.
+;// PIC18s should have a delta (addressible unit size) of 1 (default) since they
+;// are byte addressible.  PIC10/12/16s have a delta of 2 since they are word
+;// addressible.  PIC18s should have a reloc (alignment) flag of 2 for any
+;// psect which contains executable code.  PIC10/12/16s can use the default
+;// reloc value of 1.  Use one of the psects below for the device you use:
+
+;// psect   barfunc,local,class=CODE,delta=2 ; PIC10/12/16
+psect   barfunc,local,class=CODE,reloc=2 ; PIC18
+
+global SIDEMU ; extern function goes in the C source file
+
+    
+;//******************************************************************
+;// Assembly SID emulator
+;//******************************************************************
+SIDEMU:
+    //mov      dira, r1				    // Register: Direction registers for 32-bit ports A and B.
+    //mov      ctra, arg1                             // The CTR (CTRA and CTRB) register selects the counter's operating mode. 
+    //mov      ctrb, arg2
+    //mov      waitCounter, cnt
+    //add      waitCounter, sampleRate
+
+//******************************************************************
+// Read all SID-registers from hub memory and convert
+// them to more convenient representations.
+//******************************************************************
+getRegisters:
+    mov       tempValue, par                        // Read in first long ( 16bit frequency / 16bit pulse-width )
+    rdlong    frequency1, tempValue           
+    mov       pulseWidth1, frequency1
+    shl       pulseWidth1, #4                       // Shift in "12 bit" pulse width value( make it 32 bits )
+    andn      pulseWidth1, mask20bit 
+    and       frequency1, mask16bit                 // Mask out 16 bit frequency value
+    shl       frequency1, #13
+//----------------------------------------------------------- 
+    add       tempValue, #4                         // Read in next long ( Control register / ADSR )
+    rdlong    selectedWaveform1, tempValue
+    mov       controlRegister1, selectedWaveform1
+//----------------------------------------------------------- 
+    mov       arg1, selectedWaveform1
+    shr       arg1, #8
+    call      #getADSR
+    mov       decay1, r1
+    call      #getADSR
+    mov       attack1, r1                           ; Convert 4bit ADSR "presets" to their corresponding
+    call      #getADSR                              ; 32bit values using attack/decay tables.
+    mov       release1, r1
+    mov       sustain1, arg1
+    ror       sustain1, #4
+    or        sustain1, arg1
+    ror       sustain1, #4
+//----------------------------------------------------------- 
+    shr       selectedWaveform1, #4                 ;   Mask out waveform selection
+    and       selectedWaveform1, #15
+//----------------------------------------------------------- 
+    test      controlRegister1, #1  C
+    cmp       envelopeState1, #2    Z
+ if_z_and_c   mov envelopeState1, #0
+ if_nz_and_nc mov envelopeState1, #2           
+ 
+//******************************************************************
+// Channel 2  
+//******************************************************************
+    add       tempValue, #4                         // Read in first long ( 16bit frequency / 16bit pulse-width )
+    rdlong    frequency2, tempValue
+    mov       pulseWidth2, frequency2
+    shl       pulseWidth2, #4                       // Shift in "12 bit" pulse width value( make it 32 bits )
+    andn      pulseWidth2, mask20bit
+    and       frequency2, mask16bit                 // Mask out 16 bit frequency value
+    shl       frequency2, #13
+//-----------------------------------------------------------
+    add       tempValue, #4                         // Read in next long ( Control register / ADSR )
+    rdlong    selectedWaveform2, tempValue
+    mov       controlRegister2,  selectedWaveform2
+//-----------------------------------------------------------
+    mov       arg1, selectedWaveform2
+    shr       arg1, #8
+    call      #getADSR
+    mov       decay2, r1
+    call      #getADSR
+    mov       attack2, r1                           // Convert 4bit ADSR "presets" to their corresponding
+    call      #getADSR                              ; 32bit values using attack/decay tables.
+    mov       release2, r1
+    mov       sustain2, arg1
+    ror       sustain2, #4
+    or        sustain2, arg1
+    ror       sustain2, #4
+//----------------------------------------------------------- 
+    shr       selectedWaveform2, #4                 ;   Mask out waveform selection
+    and       selectedWaveform2, #15
+//-----------------------------------------------------------
+    test      controlRegister2, #1 C
+    cmp       envelopeState2, #2 Z
+    if_z_and_c   mov envelopeState2, #0
+    if_nz_and_nc mov envelopeState2, #2
+ 
+;//******************************************************************
+;//    Channel 3      
+;//******************************************************************
+    add       tempValue, #4                         ; // Read in first long ( 16bit frequency / 16bit pulse-width )
+    rdlong    frequency3, tempValue
+    mov       pulseWidth3, frequency3
+    shl       pulseWidth3, #4                       ; // Shift in "12 bit" pulse width value( make it 32 bits )
+    andn      pulseWidth3, mask20bit 
+    and       frequency3, mask16bit                 ; // Mask out 16 bit frequency value
+    shl       frequency3, #13            
+//----------------------------------------------------------- 
+    add       tempValue, #4                         ; // Read in next long ( Control register / ADSR )
+    rdlong    selectedWaveform3, tempValue
+    mov       controlRegister3,  selectedWaveform3
+//----------------------------------------------------------- 
+    mov       arg1, selectedWaveform3
+    shr       arg1, #8
+    call      #getADSR
+    mov       decay3, r1
+    call      #getADSR
+    mov       attack3, r1                           ; Convert 4bit ADSR "presets" to their corresponding
+    call      #getADSR                              ; 32bit values using attack/decay tables.    
+    mov       release3, r1
+    mov       sustain3, arg1
+    ror       sustain3, #4
+    or        sustain3, arg1
+    ror       sustain3, #4
+//----------------------------------------------------------- 
+    shr       selectedWaveform3, #4                 ; Mask out waveform selection
+    and       selectedWaveform3, #15
+//----------------------------------------------------------- 
+    test      controlRegister3, #1 C
+    cmp       envelopeState3, #2 Z
+ if_z_and_c   mov envelopeState3, #0
+ if_nz_and_nc mov envelopeState3, #2
+ 
+;******************************************************************
+;            Filter / Volume  
+;******************************************************************
+    add       tempValue, #4
+    rdlong    filterControl, tempValue
+    mov       filterCutoff, filterControl
+//----------------------------------------------------------- 
+    shr       filterControl, #16                    ; Filter control
+//-----------------------------------------------------------    
+    shr       filterCutoff, #5
+    andn      filterCutoff, #7
+    mov       tempValue, filterControl
+    and       tempValue, #7                         ; Filter cutoff frequency
+    or        filterCutoff, tempValue
+    and       filterCutoff, mask11bit
+    add       filterCutoff, filterOffset
+//----------------------------------------------------------- 
+    mov       filterMode_Volume, filterControl      ; Main volume and filter mode
+    shr       filterMode_Volume, #8
+//-----------------------------------------------------------
+    mov       filterResonance,filterControl
+    and       filterResonance,#$F0                  ; Filter Resonance level
+    shr       filterResonance,#4
+
+;******************************************************************
+; Calculate sid samples channel 1-3 and store in out1-out3 
+;******************************************************************
+ 
+;******************************************************************
+;    Increment phase accumulator 1-3 and handle syncing
+;******************************************************************
+SID:
+    add     phaseAccumulator1, frequency1    wc	    ; Add frequency value to phase accumulator 1
+    if_nc   andn controlRegister2, #2
+    test    controlRegister2, #10            wz	    ; Sync oscilator 2 to oscillator 1 if sync = on 
+    if_nz   mov phaseAccumulator2, #0		    ; Or reset counter 2 when bit 4 of control register is 1
+//-----------------------------------------------------------      
+    add     phaseAccumulator2, frequency2    wc
+    if_nc   andn controlRegister3, #2
+    test    controlRegister3, #10            wz	    ; Sync oscilator 3 to oscillator 2 if sync = on 
+    if_nz   mov phaseAccumulator3, #0		    ; Or reset oscilator 3 when bit 4 of control register is 1
+//-----------------------------------------------------------
+    add     phaseAccumulator3, frequency3    wc
+    if_nc   andn controlRegister1, #2
+    test    controlRegister1, #10            wz	    ; Sync oscilator 1 to oscillator 3 if sync = on 
+    if_nz   mov phaseAccumulator1, #0		    ; Or reset oscilator 1 when bit 4 of control register is 1
+
+;******************************************************************
+;            Waveform shaping channel 1 -> arg1       
+;******************************************************************
+Saw1:
+    cmp	    selectedWaveform1, #2	wz
+    mov     arg1, phaseAccumulator1
+    if_z    jmp  #Envelope1   
+//-----------------------------------------------------------  
+Triangle1:
+    cmp     selectedWaveform1, #1 Z, C
+    if_nz   jmp #Square1
+    shl     arg1, #1 C
+    if_c    xor arg1, mask32bit       
+    test    controlRegister1, #4 Z
+    if_nz   test     phaseAccumulator3, val31bit Z    ; //These 3 lines handles ring modulation
+    if_nz   xor      arg1, mask32bit
+    jmp     #Envelope1   
+//-----------------------------------------------------------  
+Square1:
+    cmp     selectedWaveform1, #4	wz
+    if_z    sub pulseWidth1, phaseAccumulator1   wc	    ; C holds the pulse width modulated square wave
+    if_z    muxc arg1, mask32bit
+    if_z    jmp #Envelope1
+//-----------------------------------------------------------  
+Noise1:
+    cmp	    selectedWaveform1, #8	wz
+    if_nz   jmp #Combined1  
+    and     arg1, mask28bit 
+    sub     arg1, frequency1       wc
+    movi    arg1, noiseValue1
+    add     arg1, noiseAddValue
+    if_nc   jmp      #Envelope1 
+    test    noiseValue1, noiseTap            wc 
+    rcr     noiseValue1, #1  
+    jmp     #Envelope1
+//-----------------------------------------------------------      
+Combined1:
+    test    selectedWaveform1, #8            wz
+    sub     selectedWaveform1, #4             
+    mins    selectedWaveform1, #0             
+    shl     selectedWaveform1, #8
+    mov     tempValue, phaseAccumulator1
+    shr     tempValue, #24
+    add     selectedWaveform1, tempValue
+    add     selectedWaveform1, combTableAddr
+    if_nc_and_z rdbyte   arg1, selectedWaveform1
+    if_nc_and_z shl      arg1, #24
+    if_c_or_nz  mov      arg1, val31bit
+
+
+;******************************************************************
+;            Envelope shaping channel 1 -> arg2           
+;******************************************************************
+Envelope1:
+    mov     tempValue, decayDivideRef
+    shr     tempValue, decayDivide1
+    cmp     envelopeLevel1, tempValue	wc
+    tjnz    envelopeState1, #Env_Dec1	nr
+//----------------------------------------------------------- 
+Env_At1:
+    if_nc   cmpsub   decayDivide1, #1           
+    add     envelopeLevel1, attack1          wc
+    if_c    mov envelopeLevel1, mask32bit         
+    if_c    mov envelopeState1, #1
+    jmp     #Amplitude1
+//----------------------------------------------------------- 
+Env_Dec1:
+    if_c    add decayDivide1, #1
+    cmp	    startLogLevel, envelopeLevel1    wc 
+    cmp	    envelopeState1, #1		    wz
+    if_nz   jmp #Rel1
+    if_nc   shr decay1, decayDivide1  
+    sub	    envelopeLevel1, decay1
+    min	    envelopeLevel1, sustain1         wc
+    jmp	    #Amplitude1
+//----------------------------------------------------------- 
+Rel1:
+    if_nc   shr release1, decayDivide1  
+    cmpsub  envelopeLevel1, release1
+          
+;******************************************************************
+//Calculate sample out1 = arg1 * arg2 (waveform * amplitude)    
+;******************************************************************
+Amplitude1:
+    shr	    arg1, #14
+    sub     arg1, val17bit             
+    mov     arg2, envelopeLevel1     
+    shr     arg2, #24
+    call    #multiply
+    mov     out1, r1
+ 
+;******************************************************************
+;            Waveform shaping channel 2 -> arg1       
+;******************************************************************
+Saw2:
+    cmp     selectedWaveform2, #2            wz
+    mov     arg1, phaseAccumulator2
+    if_z    jmp #Envelope2   
+//----------------------------------------------------------- 
+Triangle2:
+    cmp     selectedWaveform2, #1            wz, wc
+    if_nz   jmp #Square2
+    shl     arg1, #1     wc
+    if_c    xor arg1, mask32bit
+    test    controlRegister2, #4             wz
+    if_nz   test phaseAccumulator1, val31bit wz ; These 3 lines handles ring modulation
+    if_nz   xor arg1, mask32bit
+    jmp     #Envelope2
+//-----------------------------------------------------------  
+Square2:
+    cmp     selectedWaveform2, #4            wz
+    if_z    sub  pulseWidth2, phaseAccumulator2   wc ; C holds the pulse width modulated square wave  
+    if_z    muxc arg1, mask32bit    
+    if_z    jmp  #Envelope2   
+//----------------------------------------------------------- 
+Noise2:
+    cmp	    selectedWaveform2, #8 wz 
+    if_nz   jmp #Combined2  
+    and     arg1, mask28bit 
+    sub     arg1, frequency2 wc
+    movi    arg1, noiseValue2
+    add     arg1, noiseAddValue
+  if_nc     jmp      #Envelope2 
+    test    noiseValue2, noiseTap wc 
+    rcr     noiseValue2, #1 
+    jmp     #Envelope2
+//-----------------------------------------------------------      
+Combined2:
+    test     selectedWaveform2, #8 wz
+    sub      selectedWaveform2, #4
+    mins     selectedWaveform2, #0             
+    shl      selectedWaveform2, #8
+    mov      tempValue, phaseAccumulator2
+    shr      tempValue, #24
+    add      selectedWaveform2, tempValue
+    add      selectedWaveform2, combTableAddr    
+    if_nc_and_z rdbyte arg1, selectedWaveform2
+    if_nc_and_z shl arg1, #24     
+    if_c_or_nz  mov arg1, val31bit             
+
+;******************************************************************
+;            Envelope shaping channel 2 -> arg2           
+;******************************************************************
+Envelope2:
+    mov	    tempValue, decayDivideRef
+    shr     tempValue, decayDivide2
+    cmp     envelopeLevel2, tempValue wc
+    tjnz    envelopeState2, #Env_Dec2 nr 
+//----------------------------------------------------------- 
+Env_At2 if_nc:
+    cmpsub  decayDivide2, #1          
+    add     envelopeLevel2, attack2          wc
+    if_c    mov envelopeLevel2, mask32bit         
+    if_c    mov envelopeState2, #1
+    jmp     #Amplitude2
+//----------------------------------------------------------- 
+Env_Dec2:
+    if_c    add decayDivide2, #1    
+    cmp     startLogLevel,envelopeLevel2 wc   
+    cmp     envelopeState2, #1 wz
+    if_nz   jmp #Rel2 
+    if_nc   shr decay2, decayDivide2  
+    sub     envelopeLevel2, decay2
+    min     envelopeLevel2, sustain2 wc
+    jmp     #Amplitude2
+//-----------------------------------------------------------   
+Rel2 if_nc:
+    shr     release2, decayDivide2  
+    cmpsub  envelopeLevel2, release2
+   
+;******************************************************************
+//Calculate sample out2 = arg1 * arg2 (waveform * amplitude)     
+;******************************************************************
+Amplitude2:
+    shr     arg1, #14
+    sub     arg1, val17bit  
+    mov     arg2, envelopeLevel2
+    shr     arg2, #24
+    call    #multiply
+    mov     out2, r1
+
+;******************************************************************
+;            Waveform shaping channel 3 -> arg1       
+;******************************************************************
+Saw3:
+    cmp     selectedWaveform3, #2 wz
+    mov     arg1, phaseAccumulator3
+    if_z    jmp #Envelope3   
+//----------------------------------------------------------- 
+Triangle3:
+    cmp     selectedWaveform3, #1 wz, wc
+    if_nz   jmp #Square3
+    shl     arg1, #1 wc
+    if_c    xor arg1, mask32bit
+    test    controlRegister3, #4 wz
+    if_nz   test phaseAccumulator2, val31bit wz	    ; These 3 lines handles ring modulation 
+    if_nz   xor arg1, mask32bit
+    jmp     #Envelope3
+//-----------------------------------------------------------  
+Square3:
+    cmp     selectedWaveform3, #4 wz
+    if_z    sub pulseWidth3, phaseAccumulator3 wc   ; C holds the pulse width modulated square wave  
+    if_z    muxc arg1, mask32bit         
+    if_z    jmp #Envelope3 
+//----------------------------------------------------------- 
+Noise3:
+    cmp     selectedWaveform3, #8 wz 
+    if_nz   jmp #Combined3  
+    and     arg1, mask28bit
+    sub     arg1, frequency3 wc
+    movi    arg1, noiseValue3
+    add     arg1, noiseAddValue
+    if_nc   jmp #Envelope3 
+    test    noiseValue3, noiseTap wc 
+    rcr     noiseValue3, #1 
+    jmp     #Envelope3
+//-----------------------------------------------------------  
+Combined3:
+    test    selectedWaveform3, #8 wz
+    sub     selectedWaveform3, #4             
+    mins    selectedWaveform3, #0
+    shl     selectedWaveform3, #8
+    mov     tempValue, phaseAccumulator3
+    shr     tempValue, #24
+    add     selectedWaveform3, tempValue
+    add     selectedWaveform3, combTableAddr    
+    if_nc_and_z rdbyte arg1, selectedWaveform3
+    if_nc_and_z shl arg1, #24     
+    if_c_or_nz  mov arg1, val31bit
+      
+;******************************************************************
+;            Envelope shaping channel 3 -> arg2           
+;******************************************************************
+Envelope3:
+    mov     tempValue, decayDivideRef           
+    shr     tempValue, decayDivide3             
+    cmp     envelopeLevel3, tempValue wc 
+    tjnz    envelopeState3, #Env_Dec3 nr  
+//----------------------------------------------------------- 
+Env_At3:
+    if_nc   cmpsub   decayDivide3, #1          
+    add     envelopeLevel3, attack3 wc 
+    if_c    mov envelopeLevel3, mask32bit           
+    if_c    mov envelopeState3, #1        
+    jmp     #Amplitude3     
+//----------------------------------------------------------- 
+Env_Dec3:
+    if_c    add decayDivide3, #1          
+    cmp     startLogLevel, envelopeLevel3 wc   
+    cmp     envelopeState3, #1 wz 
+    if_nz   jmp #Rel3             
+    if_nc   shr decay3, decayDivide3      
+    sub     envelopeLevel3, decay3    
+    min     envelopeLevel3, sustain3 wc 
+    jmp     #Amplitude3     
+//-----------------------------------------------------------  
+Rel3:
+    if_nc   shr release3, decayDivide3    
+    cmpsub  envelopeLevel3, release3            
+  
+;******************************************************************
+//Calculate sample out3 = arg1 * arg2 (waveform * amplitude)     
+;******************************************************************
+Amplitude3:
+    shr     arg1, #14
+    sub     arg1, val17bit            
+    mov     arg2, envelopeLevel3
+    shr     arg2, #24
+    call    #multiply
+    mov     out3, r1
+
+;******************************************************************
+;    Handle multi-mode filtering 
+;******************************************************************
+filter:
+    mov     ordinaryOutput, #0
+    mov     highPassFilter, #0
+    test    filterControl, #1 wc
+    if_c    add highPassFilter, out1
+    if_nc   add ordinaryOutput, out1
+    test    filterControl, #2 wc	    ; Route channels trough the filter
+    if_c    add highPassFilter, out2	    ; or bypass them
+    if_nc   add ordinaryOutput, out2
+    test    filterControl, #4 wc
+    if_c    add highPassFilter, out3
+    if_nc   add ordinaryOutput, out3
+//-----------------------------------------------------------
+    mov      arg2, filterResonance
+    add      arg2, #RESONANCE_OFFSET         
+    mov      arg1, bandPassFilter
+    sar      arg1, #RESONANCE_FACTOR
+    call     #multiply				; High pass filter
+    sub      highPassFilter, bandPassFilter
+    add      highPassFilter, r1
+    sub      highPassFilter, lowPassFilter
+//----------------------------------------------------------- 
+    mov      arg1, highPassFilter
+    sar      arg1, #BP_MAX_CUTOFF
+    mov      arg2, filterCutoff			; Band pass filter
+    max      arg2, maxCutoff
+    call     #multiply
+    add      bandPassFilter, r1
+//----------------------------------------------------------- 
+    mov      arg1, bandPassFilter
+    sar      arg1, #LP_MAX_CUTOFF
+    mov      arg2, filterCutoff			; Low pass filter
+    call     #multiply
+    add      lowPassFilter, r1
+//-----------------------------------------------------------  
+    mov      filterOutput, #0
+    test     filterMode_Volume, #16 wc
+    if_c     add filterOutput, lowPassFilter
+    test     filterMode_Volume, #32 wc		; Enable/Disable
+    if_c     add filterOutput, bandPassFilter	; Low/Band/High pass filtering
+    test     filterMode_Volume, #64 wc
+    if_c     add filterOutput, highPassFilter
+
+;******************************************************************
+;      Mix channels and update FRQA/FRQB PWM-values
+;******************************************************************
+mixer:
+    mov     arg1, filterOutput 
+    add     arg1, ordinaryOutput 
+//----------------------------------------------------------- 
+    maxs    arg1, clipLevelHigh
+    mins    arg1, clipLevelLow
+    mov     arg2, filterMode_Volume	        ; Main volume adjustment
+    and     arg2, #15
+    call    #multiply
+//-----------------------------------------------------------             
+    add     r1, val31bit			; DC offset
+    waitcnt waitCounter, sampleRate             ; Wait until the right time to update
+    mov     FRQA, r1				; Update PWM values in FRQA/FRQB
+    mov     FRQB, r1
+    mov     tempValue, par
+    add     tempValue, #28
+    wrlong  r1, tempValue			; Write the sample to hub ram
+    jmp     #getRegisters
+     
+;******************************************************************
+;   Get ADSR value    r1 = attackTable[arg1]
+;******************************************************************
+getADSR:
+    movs      :indexed1, arg1
+    andn      :indexed1, #$1F0
+    add       :indexed1, #ADSRTable
+    shr       arg1, #4    
+:indexed1     mov       r1, 0
+getADSR_ret:
+    ret
+
+;******************************************************************
+;    Multiplication     r1(I32) = arg1(I32) * arg2(I32)
+;******************************************************************
+multiply:
+    mov       r1,   #0            //Clear 32-bit product
+:multiLoop    shr       arg2, #1   wc, wz   //Half multiplyer and get LSB of it
+  if_c        add       r1,   arg1          //Add multiplicand to product on C
+    shl       arg1, #1            //Double multiplicand    
+  if_nz       jmp       #:multiLoop         //Check nonzero multiplier to continue multiplication
+multiply_ret  ret
+
+;******************************************************************
+;    Variables, tables, masks and reference values
+;******************************************************************
+
+GLOBAL
+
+ADSRTable:
+DW trunc(ENV_CAL_FACTOR * (1.0 / 9.0    )) //2   ms   
+DW trunc(ENV_CAL_FACTOR * (1.0 / 32.0   )) //8   ms        
+DW trunc(ENV_CAL_FACTOR * (1.0 / 63.0   )) //16  ms     
+DW trunc(ENV_CAL_FACTOR * (1.0 / 95.0   )) //24  ms        
+DW trunc(ENV_CAL_FACTOR * (1.0 / 149.0  )) //38  ms       
+DW trunc(ENV_CAL_FACTOR * (1.0 / 220.0  )) //56  ms           
+DW trunc(ENV_CAL_FACTOR * (1.0 / 267.0  )) //68  ms         
+DW trunc(ENV_CAL_FACTOR * (1.0 / 313.0  )) //80  ms      
+DW trunc(ENV_CAL_FACTOR * (1.0 / 392.0  )) //100 ms            
+DW trunc(ENV_CAL_FACTOR * (1.0 / 977.0  )) //250 ms      
+DW trunc(ENV_CAL_FACTOR * (1.0 / 1954.0 )) //500 ms        
+DW trunc(ENV_CAL_FACTOR * (1.0 / 3126.0 )) //800 ms          
+DW trunc(ENV_CAL_FACTOR * (1.0 / 3907.0 )) //1   s       
+DW trunc(ENV_CAL_FACTOR * (1.0 / 11720.0)) //3   s         
+DW trunc(ENV_CAL_FACTOR * (1.0 / 19532.0)) //5   s          
+DW trunc(ENV_CAL_FACTOR * (1.0 / 31251.0)) //8   s    
+
+;******************************************************************
+; Masks and reference values
+;******************************************************************
+
+startLogLevel:  DDW START_LOG_LEVEL 
+sustainAdd:     DDW $0f000000   
+mask32bit:      DDW $ffffffff
+mask31bit:      DDW $7fffffff 
+mask28bit:      DDW $fffffff 
+mask24bit:      DDW $ffffff
+mask20bit:      DDW $fffff
+mask16bit:      DDW $ffff
+mask11bit:      DDW $7ff
+val31bit:       DDW $80000000
+val28bit:       DDW $10000000
+val27bit:       DDW $8000000 
+val17bit:       DDW $20000
+val16bit:       DDW $10000
+clipLevelHigh:  DDW $8000000
+clipLevelLow:   DDW-$8000000
+filterOffset:   DDW FILTER_OFFSET
+decayDivideRef: DDW DECAY_DIVIDE_REF
+maxCutoff:      DDW CUTOFF_LIMIT 
+sampleRate:     DDW 0       //clocks between samples ( ~31.250 khz )
+combTableAddr:  DDW 0
+
+//Setup and subroutine parameters  
+arg1      DDW 1
+arg2      DDW 1
+r1        DDW 1 
+
+//Sid variables
+noiseAddValue:      DDW NOISE_ADD
+noiseTap:           DDW NOISE_TAP
+noiseValue1:        DDW $ffffff
+noiseValue2:        DDW $ffffff  
+noiseValue3:        DDW $ffffff
+
+decayDivide1:       DDW 0
+decayDivide2:       DDW 0
+decayDivide3:       DDW 0
+
+envelopeLevel1:	    DDW	0
+envelopeLevel2:     DDW	0
+envelopeLevel3:     DDW 0
+
+controlRegister1:   DDW 0
+controlRegister2:   DDW 0
+controlRegister3:   DDW 0
+
+frequency1:         DDW 0
+frequency2:         DDW 0
+frequency3:         DDW 0
+
+phaseAccumulator1:  DDW 0
+phaseAccumulator2:  DDW 0
+phaseAccumulator3:  DDW 0
+
+pulseWidth1:	    DDW 0
+pulseWidth2:        DDW 0
+pulseWidth3:        DDW 0
+
+selectedWaveform1:  DDW 0
+selectedWaveform2:  DDW 0
+selectedWaveform3:  DDW 0
+   
+envelopeState1:     DDW 0
+envelopeState2:     DDW 0
+envelopeState3:     DDW 0
+      
+attack1:            DDW 0
+attack2:            DDW 0
+attack3:            DDW 0
+	     
+decay1:		    DDW 0
+decay2:		    DDW 0
+decay3:		    DDW 0
+    
+sustain1            res  1
+sustain2            res  1
+sustain3            res  1 
+	    
+release1            res  1
+release2            res  1
+release3            res  1
+	    
+out1      res  1
+out2      res  1
+out3      res  1
+      
+filterResonance     res  1
+filterCutoff        res  1
+highPassFilter      res  1
+bandPassFilter      res  1 
+lowPassFilter       res  1
+filterMode_Volume   res  1
+filterControl       res  1
+filterOutput        res  1
+ordinaryOutput      res  1
+
+//Working variables
+waitCounter         res  1
+tempValue           res  1
+          fit      
+
+DAT
+  combinedWaveforms  file "CombinedWaveforms.bin"
+
+ch1_frequencyLo:        DB	0x00
+ch1_frequencyHi:        DB      0x00
+ch1_pulseWidthLo:       DB	0x00 
+ch1_pulseWidthHi:       DB	0x00
+ch1_controlRegister:    DB	0x00
+ch1_attackDecay:        DB	0x00
+ch1_sustainRelease:     DB	0x00
+ch1_dummy:		DB	0x00
+
+ch2_frequencyLo:        DB	0x00
+ch2_frequencyHi:        DB	0x00
+ch2_pulseWidthLo:       DB	0x00
+ch2_pulseWidthHi:       DB	0x00
+ch2_controlRegister:    DB	0x00
+ch2_attackDecay:        DB	0x00
+ch2_sustainRelease:     DB	0x00
+ch2_dummy:		DB	0x00
+
+ch3_frequencyLo:        DB	0x00
+ch3_frequencyHi:        DB	0x00
+ch3_pulseWidthLo:       DB	0x00
+ch3_pulseWidthHi:       DB	0x00
+ch3_controlRegister:    DB	0x00
+ch3_attackDecay:        DB	0x00
+ch3_sustainRelease:     DB	0x00
+ch3_dummy:		DB	0x00
+
+Filter1:		DB	0x00
+Filter2:		DB	0x00
+Filter3:		DB	0x00
+
+Volume:			DB	0x00
+oldVolume:		DB	0x00
+SIDSample:		DDW	0
+cog:			DDW	0
+
+.end
+
+

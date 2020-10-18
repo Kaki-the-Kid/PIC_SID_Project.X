@@ -1,0 +1,25 @@
+var ex_s_i_d_8c =
+[
+    [ "xSpriv_s", "structx_spriv__s.html", "structx_spriv__s" ],
+    [ "ARRAY_SIZE", "ex_s_i_d_8c.html#a6242a25f9d996f0cc4f4cdb911218b75", null ],
+    [ "clkdrift_t", "ex_s_i_d_8c.html#ae2ae545ee48d26354c7b6c44db6347c5", null ],
+    [ "exSID_audio_op", "ex_s_i_d_8c.html#a36b1984d1e45c0dd70ed245fed73bb74", null ],
+    [ "exSID_chipselect", "ex_s_i_d_8c.html#a2f109c3b66f6eb57fe8d2c3cf3204f1e", null ],
+    [ "exSID_clkdread", "ex_s_i_d_8c.html#aabc3afae9d3f2df1edde86fa681802df", null ],
+    [ "exSID_clkdwrite", "ex_s_i_d_8c.html#ac2e9ed1792d6f50af8307d201db030bf", null ],
+    [ "exSID_clockselect", "ex_s_i_d_8c.html#af907712c79eecd8b4c474c59cc5ef295", null ],
+    [ "exSID_delay", "ex_s_i_d_8c.html#ac54a04da8749bfc0cf77f5b326e1a236", null ],
+    [ "exSID_error_str", "ex_s_i_d_8c.html#a590073dfcde295db57602ae25cce8b1b", null ],
+    [ "exSID_exit", "ex_s_i_d_8c.html#a8c823087c7c4b66d9a100b0f1b472b05", null ],
+    [ "exSID_hwmodel", "ex_s_i_d_8c.html#aa49fb3a45e697e2c1025c088f23b8ec0", null ],
+    [ "exSID_hwversion", "ex_s_i_d_8c.html#adafd803a4934b2beb70c65b20a020783", null ],
+    [ "exSID_init", "ex_s_i_d_8c.html#a1df1123647ec8910933ef1009495ea9b", null ],
+    [ "exSID_reset", "ex_s_i_d_8c.html#a09f83555d018a08b3f7e3128409b90ca", null ],
+    [ "desc", "ex_s_i_d_8c.html#a710bce51374aba96ab04912897666c35", null ],
+    [ "pid", "ex_s_i_d_8c.html#ae1d43221be61daed83e69c77350619a1", null ],
+    [ "vid", "ex_s_i_d_8c.html#a6a1f347ee078d6e5dbec465bfdfdcc20", null ],
+    [ "xSerrstr", "ex_s_i_d_8c.html#a96559cc5d77a87baf502135f2788bc0a", null ],
+    [ "xsp", "ex_s_i_d_8c.html#ab5ec3c83e0c9b23616c64b7b7cf2e5d0", null ],
+    [ "xSpriv", "ex_s_i_d_8c.html#aacb44ceb6cccbbbbb55c262046317ba2", null ],
+    [ "xSsupported", "ex_s_i_d_8c.html#a657e0f373d89d9360a71108a43f7bc2d", null ]
+];

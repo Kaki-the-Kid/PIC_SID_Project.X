@@ -1,0 +1,25 @@
+var gplay_8h =
+[
+    [ "CHN", "struct_c_h_n.html", "struct_c_h_n" ],
+    [ "PLAY_BEGINNING", "gplay_8h.html#a4a8c2495a0dff6fb63386ebb52fae0fe", null ],
+    [ "PLAY_PATTERN", "gplay_8h.html#aff79db6b3b10c663098f04895ea241f2", null ],
+    [ "PLAY_PLAYING", "gplay_8h.html#af52b75470718ed53243e70d870c555f9", null ],
+    [ "PLAY_POS", "gplay_8h.html#a99429b3187831bc3fc150c309d617a29", null ],
+    [ "PLAY_STOP", "gplay_8h.html#adfa6a9e47040d791d57dc7fd49357f3c", null ],
+    [ "PLAY_STOPPED", "gplay_8h.html#aafd5c361c78dc114e251611ba14e77aa", null ],
+    [ "initchannels", "gplay_8h.html#a88526746443d49ab7f4226aa2af4f2d5", null ],
+    [ "initsong", "gplay_8h.html#a3b6b83d6403b8706b782ff993ecb18d3", null ],
+    [ "initsongpos", "gplay_8h.html#a9889823b13d5b61cdf87e0bc5343e7ed", null ],
+    [ "isplaying", "gplay_8h.html#a8ad6ac7ddf6e555e3af0547ef257443d", null ],
+    [ "mutechannel", "gplay_8h.html#a83a1a6c098f32a586373e690b5cff68c", null ],
+    [ "playroutine", "gplay_8h.html#a06f5bf886188277a3172789da76fd1e6", null ],
+    [ "playtestnote", "gplay_8h.html#a11c1836304331244d5809870f518fb15", null ],
+    [ "releasenote", "gplay_8h.html#a13143dad80789e361b49e4b0dc17f0a1", null ],
+    [ "rewindsong", "gplay_8h.html#a3897f115a1451faf6d8b32e612dfa5ed", null ],
+    [ "stopsong", "gplay_8h.html#a8a59a144681d102fae9637b8a70756aa", null ],
+    [ "chn", "gplay_8h.html#a7e94610bbc8c3b11ee745c8a8e2bd612", null ],
+    [ "freqtblhi", "gplay_8h.html#a7031f736258667561dba6f62a8853e01", null ],
+    [ "freqtbllo", "gplay_8h.html#ac809178e794cdc0b5d7e038bfe70f4d6", null ],
+    [ "lastsonginit", "gplay_8h.html#a16d5feca6d52834a112f34ec4b80971c", null ],
+    [ "masterfader", "gplay_8h.html#ac471d45bc2cdee9444debb7e46c86769", null ]
+];

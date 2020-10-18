@@ -1,0 +1,28 @@
+var errno_8h =
+[
+    [ "EACCES", "errno_8h.html#ac2a2e9fa555401f94478f74e01868032", null ],
+    [ "EAGAIN", "errno_8h.html#af0fac1cea1165b4debec7f686edf3313", null ],
+    [ "EBADF", "errno_8h.html#ac54507d66b43ad12f9356257323c0018", null ],
+    [ "EBUSY", "errno_8h.html#a8368025077a0385849d6817b2007c095", null ],
+    [ "EEXIST", "errno_8h.html#a0a3bef9e5c47e42917692b5dae3b5498", null ],
+    [ "EINTR", "errno_8h.html#a46b83d9f6c23b1b65a8cecfd775ddaed", null ],
+    [ "EINVAL", "errno_8h.html#a2d1678d5a7cc8ce499643f3b8957def4", null ],
+    [ "EIO", "errno_8h.html#a70979f50f9c83e5aebab3d6a1bd4cf35", null ],
+    [ "EMFILE", "errno_8h.html#a64a75c174882ddbfa726c7fd040f87a1", null ],
+    [ "ENODEV", "errno_8h.html#ab9b8cc17d1947160d13faaba7a18d6d1", null ],
+    [ "ENOENT", "errno_8h.html#a03e689f378f643d16ea7537918528a48", null ],
+    [ "ENOEXEC", "errno_8h.html#a4d0b1b435ec441e7d50a430b83df5832", null ],
+    [ "ENOMEM", "errno_8h.html#a6a05c923dad0c1208043e9c20a58c8e5", null ],
+    [ "ENOSPC", "errno_8h.html#a088abe8bad2df798edad3053d719b937", null ],
+    [ "ENOSYS", "errno_8h.html#a43785b9969e0bd1af532dbde06c5540b", null ],
+    [ "ERANGE", "errno_8h.html#aa1591a4f3a86360108de5b9ba34980ca", null ],
+    [ "errno", "errno_8h.html#ab03f640d90fbc5bcb75285d08a0f25ed", null ],
+    [ "ESPIPE", "errno_8h.html#a0e42d4f9fecdcf5fcca2b333252173c3", null ],
+    [ "EUNKNOWN", "errno_8h.html#aad18b90ecda2b87a7736ec120f46fd58", null ],
+    [ "_directerrno", "errno_8h.html#ab2e45fd3e3e32de32d0b4388a2a09cb4", null ],
+    [ "_mappederrno", "errno_8h.html#ac02f932a2a1e6aa250fba8fd6dd2075c", null ],
+    [ "_osmaperrno", "errno_8h.html#a81969a5916a8665c45cbbd15ae149054", null ],
+    [ "_seterrno", "errno_8h.html#ae2a4c6b2b235e81c4674c88bda538662", null ],
+    [ "_errno", "errno_8h.html#acb9d21ba123c87398dddac3019aa4426", null ],
+    [ "_oserror", "errno_8h.html#a9ca1ce61a5d1984c8ce5e9443bf06ea6", null ]
+];

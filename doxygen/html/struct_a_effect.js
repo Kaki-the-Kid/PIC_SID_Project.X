@@ -1,0 +1,26 @@
+var struct_a_effect =
+[
+    [ "DECLARE_VST_DEPRECATED", "struct_a_effect.html#a0a115c81b12efdef32e6c58016e1f377", null ],
+    [ "DECLARE_VST_DEPRECATED", "struct_a_effect.html#ab02ac1f155456f1bce7e5794b3628059", null ],
+    [ "DECLARE_VST_DEPRECATED", "struct_a_effect.html#ac18f0e8408e051b73bbb5967336297bd", null ],
+    [ "DECLARE_VST_DEPRECATED", "struct_a_effect.html#a715ad7dd6533cb4a361c28abe4be0b4e", null ],
+    [ "dispatcher", "struct_a_effect.html#a39ccf473f67fb369fd15e052dcf45d77", null ],
+    [ "flags", "struct_a_effect.html#a2f79e4139d7c230260930382b6e3bd9f", null ],
+    [ "future", "struct_a_effect.html#aa142fc8ed8c325f3565bd4c3ef7c35c0", null ],
+    [ "getParameter", "struct_a_effect.html#a5e8e3c5f3a5b86ca8005021013292b29", null ],
+    [ "initialDelay", "struct_a_effect.html#a408ae6f1dfb655b75663cd19d3442f37", null ],
+    [ "magic", "struct_a_effect.html#a520ed49ba4e70909f08601678c1c286e", null ],
+    [ "numInputs", "struct_a_effect.html#aeebf2433fbc3efb608310bb86d6e3ffc", null ],
+    [ "numOutputs", "struct_a_effect.html#af56a90309216c597c0f8edf3d83a1308", null ],
+    [ "numParams", "struct_a_effect.html#a6b68239c1e3b74a14929bcace187f3cc", null ],
+    [ "numPrograms", "struct_a_effect.html#a2cd7e4fb095a8481e2a3282382edd059", null ],
+    [ "object", "struct_a_effect.html#a077376d12464f945e2414d5499c79b3f", null ],
+    [ "processDoubleReplacing", "struct_a_effect.html#a0a982f7687473c5d305a6eff7dbc2170", null ],
+    [ "processReplacing", "struct_a_effect.html#a4fd760e7ec933bf34e171401f24cd319", null ],
+    [ "resvd1", "struct_a_effect.html#ab168f1013dca92bea9cebfeda0acce9c", null ],
+    [ "resvd2", "struct_a_effect.html#a17a85267e186d4de0894962b6f0bcbbd", null ],
+    [ "setParameter", "struct_a_effect.html#a004f2a9298e544034435f825c283e073", null ],
+    [ "uniqueID", "struct_a_effect.html#a7f0f0892bf2657318d85275e093f96e6", null ],
+    [ "user", "struct_a_effect.html#a5ab32084b1ccaf8aaa8a0c703b8853cf", null ],
+    [ "version", "struct_a_effect.html#a327bea6abf795552c623cf0976b8d58d", null ]
+];

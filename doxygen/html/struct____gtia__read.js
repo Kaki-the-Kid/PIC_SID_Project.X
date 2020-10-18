@@ -1,0 +1,26 @@
+var struct____gtia__read =
+[
+    [ "consol", "struct____gtia__read.html#ab719f965fdbaca888c5c8c506421904c", null ],
+    [ "m0pf", "struct____gtia__read.html#a76031905374ae54df608f9dc320f4379", null ],
+    [ "m0pl", "struct____gtia__read.html#ac7fbd53a2c2b2a8ba142fb7be4d52c2f", null ],
+    [ "m1pf", "struct____gtia__read.html#a51b7e1f34495a7be4afe91fc64539414", null ],
+    [ "m1pl", "struct____gtia__read.html#aeca5ee4a13d5423193adfd7946c53745", null ],
+    [ "m2pf", "struct____gtia__read.html#af2e24776298ae0103d3e1b7e5e53175d", null ],
+    [ "m2pl", "struct____gtia__read.html#a022788e6b64359638e8811c8e9dfce23", null ],
+    [ "m3pf", "struct____gtia__read.html#a0382ceed7e7932c0c47c18b9134d85c7", null ],
+    [ "m3pl", "struct____gtia__read.html#abdb155f409f1c5c77c3385ed4ea5447e", null ],
+    [ "p0pf", "struct____gtia__read.html#af4adcfc86817c576e5b3c6cd7a9b9615", null ],
+    [ "p0pl", "struct____gtia__read.html#a41dc0d71b536aabb1367ed14159c833e", null ],
+    [ "p1pf", "struct____gtia__read.html#ad86c94b471cc581c906562f1493dc223", null ],
+    [ "p1pl", "struct____gtia__read.html#a3837cbe9dc4f278b7ceaf0d577aac149", null ],
+    [ "p2pf", "struct____gtia__read.html#ab2026704b708b2400e1ccb34086acbab", null ],
+    [ "p2pl", "struct____gtia__read.html#a69e24067ce2d57444b6ac745041f1d7e", null ],
+    [ "p3pf", "struct____gtia__read.html#adc7830696c41dd3e0d6a1d6d31c2a25d", null ],
+    [ "p3pl", "struct____gtia__read.html#af49ee07fd171702ed435d89feb459b2f", null ],
+    [ "pal", "struct____gtia__read.html#a039b1e647676707266e2b5427b753fea", null ],
+    [ "trig0", "struct____gtia__read.html#a5085fa7bba43fe0668dcfbaf73dc1a0e", null ],
+    [ "trig1", "struct____gtia__read.html#a466fa8ee97a1d48cb196372b098201d4", null ],
+    [ "trig2", "struct____gtia__read.html#a78e9623ffe683978e913cb5650d4267c", null ],
+    [ "trig3", "struct____gtia__read.html#a83f4f3c4502996524312e7663a653c12", null ],
+    [ "unused", "struct____gtia__read.html#a9ed11fb503ecefc3b81cb8936e140505", null ]
+];
