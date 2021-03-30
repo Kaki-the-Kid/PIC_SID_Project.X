@@ -1,0 +1,221 @@
+ToneIni: 
+ToneOff1: + .... .. ... F
+ToneOff:
+
+Tone001: 
+Tone002:
+Tone003:
+Tone004:
+
+
+
+Tone008:
+
+
+
+
+
+
+Tone015:
+
+
+
+
+
+
+Tone020: 1BA2 (G#4 B8) 51 .... 580
+Tone021: ....  ... ..  01 62AE ...
+Tone022: 09C5  D-3 A6  61 .... 500
+Tone023: 0939 (C#3 A5) 55 .... 580
+Tone024: 0949 (+ 0010) .. .... 600
+Tone025: 0959 (+ 0010) .. .... 580
+Tone026: 0949 (- 0010) .. .... 500
+Tone027: 0939 (- 0010) .. .... 580
+Tone028: 0929 (- 0010) .. .... 600
+Tone029: 0919 (- 0010) .. .... 580
+Tone030: 0929 (+ 0010) .. .... 500
+Tone031: 09E9 (D-3 A6) .. .... 580
+Tone032: 0A5A (D#3 A7) .. .... 600
+Tone033: ....  ... ..  54 FF00 580
+Tone034: 0A5A (D#3 A7) 55 .... 580
+Tone035: 0A6A (+ 0010) .. .... 600
+Tone036: 0A7A (+ 0010) .. .... 580
+Tone037: 0A6A (- 0010) .. .... 500
+Tone038: 0A5A (- 0010) .. .... 580
+Tone039: 0A4A (- 0010) .. .... 600
+Tone040: 0A3A (- 0010) .. .... 580
+Tone041: 0A4A (+ 0010) .. .... 500
+Tone042: 0A5A  ... ..  00 .... 580
+Tone043: 0A6A  ... ..  .. .... 600
+Tone044: 0A7A  ... ..  .. .... 580
+Tone045: 0A6A  ... ..  .. .... 500
+Tone046: 0A5A  ... ..  .. .... 580
+Tone047: 0A4A  ... ..  .. .... 600
+Tone048: 0A3A  ... ..  .. .... 580
+Tone049: 0A4A  ... ..  .. .... 500
+Tone050: 0A5A  ... ..  .. FF00 580
+Tone051: 0A3A (- 0010) 54 FF00 580
+Tone052: 09C5  D-3 A6  61 .... ...
+Tone053: 14B3 (D#4 B3) 55 .... 580
+Tone054: 14C3 (+ 0010) 54 FF00 600
+Tone055: 14D3 (+ 0010) .. .... 580
+Tone056: 0A6A  ... ..  00 .... 500
+Tone057: 0AF7 (E-3 A8) 55 .... 580
+Tone058: 0B07 (+ 0010) .. .... 600
+Tone059: 0B17 (+ 0010) .. .... 580
+Tone060: 0B14 (- 0003) .. .... 500
+Tone061: 0B11 (- 0003) .. .... 580
+Tone062: 0B0E (- 0003) .. .... 600
+Tone063: 0B0B (- 0003) .. .... 580
+Tone064: 0B08 (- 0003) .. .... 500
+Tone065: 0B05 (- 0003) .. .... 580
+Tone066: 0B02 (- 0003) .. .... 600
+Tone067: 0AFF (- 0003) .. .... 580
+Tone068: 0AFC (- 0003) .. .... 500
+Tone069: 0AF9 (- 0003) .. .... 580
+Tone070: 0AF6 (- 0003) .. .... 600
+Tone071: 0AF3 (- 0003) .. .... 580
+Tone072: 0AF0 (- 0003) .. .... 500
+Tone073: 0AED (- 0003) 54 FF00 580
+Tone074: 0AEA (- 0003) .. .... 600
+Tone075: ....  ... ..  09 0064 ...
+Tone076: 2BDD  E-5 C0  13 .... ...
+Tone077: ....  ... ..  09 0A0E ...
+Tone078: 0AF7 (E-3 A8) 41 .... ...
+Tone079: 09C5  D-3 A6  61 .... 800
+Tone080: 6E87  G#6 D0  81 .... ...
+Tone081: 08B4 (C-3 A4) .. .... ...
+Tone082: 9C4F  D-7 D6  81 .... ...
+Tone083: 7C10  A#6 D2  81 .... ...
+Tone084: 9389  C#7 D5  81 .... 500
+Tone085: 09C5  D-3 A6  61 .... 500
+Tone086: 08B4 (C-3 A4) .. .... 800
+Tone087: 06E8 (G#2 A0) .. .... ...
+Tone088: 06E8 (G#2 A0) .. .... ...
+Tone089: 1168 (C-4 B0) 55 .... ...
+Tone090: 08B4 (C-3 A4) 40 FF00 800
+Tone091: 08B4 (C-3 A4) 40 FF00 ...
+Tone092: 06E8  G#2 A0  21 .... ...
+Tone093: 06E8  G#2 A0  21 .... ...
+Tone094: 057C (E-2 9C) .. .... ...
+Tone095: 045A (C-2 98) .. .... ...
+Tone096: 0374 (G#1 94) .. .... ...
+Tone097: 02BE (E-1 90) .. .... ...
+Tone098: 0374 (G#1 94) 40 FF00 ...
+Tone099: 57BA (E-6 CC) 80 FF00 800
+Tone100: 57BA (E-6 CC) 81 .... 800
+Tone101: 0374 (G#1 94) 41 .... ...
+Tone102: 0374 (G#1 94) 40 .... ...
+
+
+Pattern000:  ToneIni, ToneOff1, ToneOff, ToneOff, 
+             ToneOff, Tone012, ToneOff
+Pattern001:  Tone013, Tone001, Tone002, Tone003, 
+             Tone004, Tone015, Tone016, Tone017, 
+             Tone016, Tone015, Tone005, Tone006, 
+			 Tone007, Tone015, Tone017, Tone016, 
+			 Tone015, Tone014, Tone017
+Pattern002:  Tone001, Tone002, Tone003, Tone008, 
+             Tone015, Tone016, Tone017, Tone016, 
+             Tone015, Tone019, Tone017, Tone016, 
+			 Tone015, Tone016, Tone017, Tone016, 
+			 Tone015, Tone018, Tone017
+Pattern003:  Tone001, Tone002, Tone020, Tone017
+Pattern004:  Tone013, Tone001, Tone002, Tone009
+Pattern004a: Tone001, Tone002, Tone009, Tone010
+Pattern004b: Tone021, Tone022, Tone053, Tone054, 
+             Tone055
+Pattern005:  Tone001, Tone002, Tone003, Tone008, 
+             Tone017
+Pattern006:  Tone001, Tone002, Tone003, Tone008, 
+             Tone015, Tone016, Tone017, Tone014, 
+             Tone015, Tone013, Tone011, Tone011
+Pattern007:  Tone004, Tone015, Tone016, Tone017, 
+             Tone016, Tone015, Tone005, Tone006, 
+             Tone007, Tone015, Tone016, Tone017, 
+			 Tone016, Tone015, Tone014, Tone017
+Pattern008:  Tone021, Tone022, Tone023, Tone024, 
+             Tone025, Tone026, Tone027, Tone028, 
+             Tone029, Tone030, Tone031, Tone032, 
+			 Tone016, Tone015, Tone016, Tone017, 
+			 Tone016, Tone015, Tone033, Tone017
+Pattern009:  Tone021, Tone022, Tone034, Tone035, 
+             Tone036, Tone037, Tone038, Tone039, 
+             Tone040, Tone041, Tone042, Tone043, 
+			 Tone044, Tone045, Tone046, Tone047, 
+			 Tone048, Tone049, Tone050, Tone043
+Pattern010:  Tone021, Tone022, Tone034, Tone035, 
+             Tone036, Tone037, Tone038
+Pattern011:  Tone021, Tone022, Tone034, Tone035, 
+             Tone036, Tone037, Tone038, Tone039, 
+             Tone051, Tone041, Tone021, Tone052, 
+			 Tone023, Tone024, Tone058, Tone059, 
+			 Tone060
+Pattern011a: Tone021, Tone022, Tone034, Tone035, 
+             Tone036, Tone037, Tone038, Tone039, 
+             Tone051, Tone041, Tone021, Tone052, 
+			 Tone023, Tone024, Tone057
+Pattern013a: Tone004, Tone015, Tone016
+Pattern013:  Tone077, Tone079, Tone078, Tone081
+Pattern014:  Tone077, Tone080
+Pattern015:  Tone077, Tone052, Tone078
+Pattern015a: Tone077, Tone052, Tone078, Tone091, 
+             Tone087
+Pattern015b: Tone077, Tone052, Tone078, Tone090, 
+             Tone088
+Pattern015c: Tone077, Tone052, Tone078, Tone081,  
+             Tone087
+Pattern015d: Tone077, Tone052, Tone078, Tone081, 
+             Tone088
+Pattern015e: Tone094, Tone095, Tone096, Tone097
+Pattern015g: Tone094, Tone095, Tone098, Tone097
+Pattern016:  Tone077, Tone082
+Pattern017:  Tone077, Tone083
+Pattern018:  Tone077, Tone022, Tone078, Tone086, 
+             Tone090, Tone088
+Pattern018a: Tone077, Tone022, Tone078, Tone086, 
+             Tone087
+Pattern018b: Tone077, Tone022, Tone078, Tone086, 
+             Tone088
+Pattern019:  Tone077, Tone084, Tone089, Tone100, 
+             Tone101
+Pattern019a: Tone077, Tone084, Tone089, Tone099, 
+             Tone102
+Pattern020:  Tone077, Tone085
+Pattern021:  Tone025, Tone026, Tone027, Tone028, 
+             Tone029, Tone030, Tone031, Tone032, 
+             Tone016, Tone015, Tone017, Tone016, 
+			 Tone015, Tone033, Tone017
+
+Pattern022:  Tone075, Tone076, ToneOff, ToneOff, ToneOff
+Pattern023: 2C5D (+ 0080) .. .... ...,
+			2CDD (+ 0080) .. .... ...,
+			2D5D (F-5 C1) .. .... ...,
+			2DDD (+ 0080) .. .... ...,
+			2E5D (+ 0080) .. .... ...,
+			2EDD (+ 0080) .. .... ...,
+			2F5D (+ 0080) .. .... ...,
+			2FDD (F#5 C2) .. .... ...,
+			305D (+ 0080) .. .... ...,
+			30DD (+ 0080) .. .... ...,
+			315D (+ 0080) .. .... ...,
+			31DD (+ 0080) .. .... ...,
+			325D (+ 0080) .. .... ...
+			
+Pattern024: 32DD (G-5 C3) .. .... ...,
+			335D (+ 0080) .. .... ...,
+			33DD (+ 0080) .. .... ...,
+			345D (+ 0080) .. .... ...,
+			34DD (+ 0080) .. .... ...,
+			355D (+ 0080) 12 .... ...
+			
+			
+Pattern025: 32DD (G-5 C3) 12 .... ...,
+			335D (+ 0080) .. .... ...,
+			33DD (+ 0080) .. .... ...,
+			345D (+ 0080) .. .... ...,
+			34DD (+ 0080) .. .... ...,
+			355D (+ 0080) .. .... ...
+			
+			
+

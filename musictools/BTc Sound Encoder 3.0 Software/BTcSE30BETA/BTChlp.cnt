@@ -1,0 +1,23 @@
+:Base BTChlp.hlp
+1 BTc Sound Encoder Contents
+2 What is BTc Sound Encoder?=whatis
+2 Supported Sound Formats and Library files=Supported sound formats and Library files
+2 The BTc sound system=system
+2 Limitations of BTc Encoder=limit
+2 Known Issues with v3.0=KnownIssues
+2 Using BTc Encoder=using
+2 Using BTc, page2 - Edit menu=Using 2
+2 Playing sound files within BTc Encoder=playing
+2 Tips for Best Encoding=tipsencode
+2 Tips for Best Playback in Hardware=tipsplayback
+2 Contacting the Author=contact
+1 BTc Theory
+2 Why Create BTc?=whycreate
+2 Basic BTc Theory=btcalgor
+2 The BTc Algorithms and Encoding=thealg
+1 Changes for v3.0
+2 Changes for v3.0=changes 3.0
+2 TalkBotBrain=TalkBotBrain
+1 (old) Changes for v2.0
+2 Changes for v2.0=Changes v2.0
+2 Bug fixes for v2.0=Bug fixes 2.0

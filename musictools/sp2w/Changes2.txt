@@ -1,0 +1,120 @@
+                      Changelog for Sidplay2/w
+                      ------------------------
+
+
+June 2 2005:
+
+/***********************************************************
+ * Maintenance release - emulation improvements
+ **********************************************************/
+
+* ReSID 0.16
+
+* PSID samples variables reset properly
+
+* emulation improvements fixes a few tunes
+
+
+May 27 2004:
+
+/***********************************************************
+ * Maintenance release - emulation improvements
+ **********************************************************/
+
++ support for multi-subtune BASIC tunes (libsidplay2)
+
++ sprite stealing emulated (libsidplay2)
+
++ p00 support (libsidplay2)
+
++ stereo mus to sid conversion (libsidplay2)
+
+* corrected instruction overlapping (libsidplay2)
+
+* CPU Debug improvements - same memory model, progress meter,
+  option to enter power-on delay value
+
+
+February 20 2004:
+
+/***********************************************************
+ * Maintenance release
+ **********************************************************/
+
+* ReSID 0.15
+
+* Improved CIA emulation in libsidplay2 (TOD emulation added)
+
+* RSID support improved
+
++ CPU debugging output file is now asked for each time
+
+
+September 27 2003:
+
+/***********************************************************
+ * Maintenance release
+ **********************************************************/
+
+* It is now possible to change subtune in the playlist edit
+  for tunes with over 6 subtunes
+
+* The playlist view keeps selection after the user chooses
+  a new tune to play
+
+* File|Open and File|Save remembers the file type from last run
+
+
+* Lots of libsidplay2 emulation improvements. The major ones are:
+
++ VIC emulation improved, adding cycle-stealing
+
++ Support for BASIC tunes
+
++ Real C64 environment improved
+
+
+October 20 2002:
+
+/***********************************************************
+ * RSID release
+ **********************************************************/
+
++ libsidplay2 now handles RSID files
+
+* Deleting entries in the PlayList edit is a bit smoother
+
+* File|Properties window stays open until it's closed and
+  gets refreshed when a new sid is loaded
+
+
+September 15 2002:
+
+/***********************************************************
+ * PSID v2NG release
+ **********************************************************/
+
+* libsidplay2 updated - fixes in PSID v2NG handling and
+  sidplay1 compatibility
+
+* STIL View 2.17
+
+* ReSID 0.13
+
+* The crash when loading Sidplayer (.MUS) files fixed
+
+* Support for PSID v2NG options in the Emulation settings,
+  namely SID model and clock speed
+
+* The File|Properties dialog now shows PSIDv2NG fields too
+
+* File|Properties and Help|About made resizeable
+
+
+January 27 2002:
+
+/***********************************************************
+ * First Sidplay2/w version
+ **********************************************************/
+
++ Initial release with libsidplay2

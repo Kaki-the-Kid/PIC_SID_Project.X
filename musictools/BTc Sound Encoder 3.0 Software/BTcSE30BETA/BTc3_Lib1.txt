@@ -1,0 +1,11 @@
+BTc Sound Encoder v3.0
+BTc3_Lib1.txt
+
+Notes about the Sound Library file BTc3_Lib1.SL
+
+This contains 11 movie sounds from the internet;
+Sounds like R2D2, chewbacca, B9 robot from lost in space,
+daleks, etc.
+
+To be used in TalkBot hardware encode to .BTL at
+44100Hz, alg1.5, BTc11.
